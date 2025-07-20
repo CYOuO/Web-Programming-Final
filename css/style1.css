@@ -1,0 +1,419 @@
+* {box-sizing:border-box;}
+html,body {
+	background-color: #ffffff;
+	font-family: "LXGW WenKai Screen"; /* 設定字體 */
+	font-weight: normal;
+  margin: 0;
+  font-size: 100%;
+	/* overflow-x: hidden; */
+	cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur266.cur), auto !important;
+	margin: 0;
+    user-select:none;
+}
+
+a {
+	text-decoration: none; /*移除超連結底線*/
+}
+/*導覽列*/
+nav {
+    z-index: 9999999;
+    position: fixed;
+	display:flex;
+	flex-direction: row;
+	grid-area: nav;
+    text-align: center;
+    font-size: 15px;
+	background-color: rgb(255, 255, 255);
+	border-bottom: solid 10px #84d8f4;
+	/* border-radius: 10px;  */
+	right: 0;
+    left: 0;
+}
+.logo
+{
+display: flex;
+align-items: center;
+margin-bottom: 5px;
+}
+
+/*導覽列三層選單設定*/
+ul {  /*取消ul預設的內縮及項目符號樣式*/
+	margin:0;
+	padding:0;
+	list-style-type: none;
+}
+.menu {
+	display: flex;
+	align-items: center;
+} 
+.menu li {
+	position: relative;
+	white-space: nowrap;
+	/* border-right: #bcebf7 1px solid; */
+}
+.menu > li:last-child {
+	border-right: none;
+}
+.menu > li {
+	float: left; /*選單第一層由左到右顯示*/
+}
+.menu a { /*選單樣式設定*/
+	display: block;
+	padding: 0 30px;
+	background-color: #fff;
+	color: #333333;
+	text-decoration: none;
+	line-height: 40px;
+}
+.menu a:hover { /*滑鼠移入按鈕變色*/
+	background-color: #84d8f4;
+	color: #ffffff;
+}
+.menu li:hover > a { /*滑鼠移入第二層選單，第一層按鈕保持變色*/
+	background-color: #84d8f4;
+	color: #ffffff;
+}
+.menu ul {
+	border: #bcebf7 1px solid;
+	position: absolute;
+	z-index: 99;
+	/* left: -1px; */
+	top: 100%;
+    min-width: 60px;
+}
+.menu ul li {
+	border-bottom: #bcebf7 1px solid;
+}
+.menu ul li:last-child {
+	border-bottom: none;
+}
+.menu ul ul { /*第三層以後的選單出現位置與第二層不同*/
+	z-index: 999;
+	top: 0;
+	left: 90%;
+}
+.menu ul { /*隱藏次選單*/
+	left: -99999px; /*設定成最大的負數，將元素放到可視範圍外*/
+	opacity: 0; /*完全透明*/
+	-webkit-transition: opacity 0.6s;
+	transition: opacity 0.6s;
+}
+.menu li:hover > ul { /*滑鼠移入展開選單*/
+	opacity: 1;
+	-webkit-transition: opacity 0.6s;
+	transition: opacity 0.6s;
+	left: -1px;
+	border-right: 5px;
+}
+.menu li:hover > ul ul { /*滑鼠移入時，次選單之後的選單依然隱藏*/
+	left: -99999px;
+}
+.menu ul li:hover > ul { /*第二層之後的選單位置*/
+	left: 90%;
+}
+.search{
+	display:flex ;
+}
+
+.wrap_search{
+	display: flex;
+	align-items: center;
+	/* position: fixed;
+	right: 1%;
+	margin-top:2% ; */
+	padding-left: 27%; 
+	margin-right: 10px;
+}
+.searchTerm{
+	padding: 5px;
+	font-size: 1.25rem;
+}
+
+.nav_icon{
+	display: flex;
+	align-items: center;
+	width:36px;
+	height: 36px;
+	margin-top: 0.5%;
+	margin-left: 10px;
+    cursor: pointer;
+}
+/*grid容器設定*/
+.grid-container {
+	display: grid;
+	grid-template-areas: 
+    'header header header header header header' /*header要占據6欄*/
+    'nav nav nav nav nav nav' /*nav要占據6欄*/
+    'middle middle middle middle middle middle'  /*left占1欄，middle占4欄，right占1欄*/
+    'footer footer footer footer footer footer'; /*footer要占據6欄*/
+    grid-gap: 10px 10px;   /*間隔設定*/
+}   
+
+
+
+/*header樣式*/
+header {
+	grid-area: header;
+	/* background-image: url(../img/p1.jpg); */
+	padding: 30px;
+	text-align: center;
+	border-radius: 10px;
+}
+
+.list-menu {
+	font-weight: bolder;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 10px 0 0 10px;
+	margin-bottom: 5px;
+	line-height: 1.5;
+	padding: 0.5em;
+}
+.list-menu a {
+	  color:#000000;
+}
+.list-menu a:hover {
+	font-size:130%;
+}
+
+/*將所有的圖片區塊都消失不見*/
+.mySlideshows {
+  display: none;
+}
+.slideshow-container {
+  max-width:80%;
+  height:50%;
+  position: relative;
+  margin: 0 auto;
+}
+/*左右按鈕*/
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 10px 10px 0;
+  user-select: none;
+}
+/*將下一張按鈕放在左側*/
+.next {
+  right: 2%;
+  border-radius: 10px 0 0 10px;
+}
+.prev{
+  left: 2%;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(244, 248, 7, 0.8);
+}
+/*圖片說明文字*/
+.text {
+  color: #f2f2f2;
+  font-size: 1.5rem;
+  padding: 50px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+/*圓點按鈕*/
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #989898;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.8s ease;
+}
+.active, .dot:hover {
+  background-color: #282828;
+}
+/*圖片變暗消失的效果*/
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+h1 {
+  font-size: 8vmin;
+  padding: 8px;
+  text-align: center;
+  mix-blend-mode: overlay; /*覆蓋效果*/
+}
+section {
+  padding: 20px;
+}
+/*flexbox設定*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+/*建立彼此相鄰的3個欄*/
+.column {
+  padding: 10px;
+}
+/*小欄*/
+.column.side {
+  flex: 1;
+  background-color: #f2efef;
+  padding: 20px;
+  margin-bottom: 10px;
+  overflow:hidden;
+}
+/*中欄*/
+.column.middle {
+  flex: 2;
+  background-color: #e8e8e8;
+  padding: 20px;
+  margin-bottom: 10px;
+  overflow:hidden;
+}
+/*RWD設定*/
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+/*按鈕*/
+.button3 {
+  font-size: 1rem;
+  text-align: center;
+  background: #3bae8f;
+  color: #fff;
+  padding: 8px 10px;
+  transition: border-radius .5s ease-in;
+}
+.button3:hover {
+  background: orangered;
+  border-radius: 50%;
+}
+
+h2 {
+  position: relative;
+  padding: 0.25em 1em;
+  border: solid 2px #64debe;
+  border-radius: 3px 0 3px 0;
+  color: #716e77;
+  text-align: center;
+}
+h2:before, h2:after {
+  content: '';
+  position: absolute;
+  width:10px;
+  height: 10px;
+  border: solid 2px #64debe;
+  border-radius: 50%;
+}
+h2:after {
+  top:-12px;
+  left:-12px;
+}
+h2:before {
+  bottom:-12px;
+  right:-12px;
+}
+h3 {
+  padding: 0.25em 1em;
+  text-align: center;
+  color: #08644b;
+  border: dashed 1px #08644b;
+}
+h5 {
+  text-align: center;
+}
+P {
+  font-size: 1rem;
+  text-align: justify;
+  line-height:24px;
+}
+.box {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+form {
+  font-size: 1.2rem;
+}
+input[type=text], input[type=email], input[type=search],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+iframe {
+  width: 100%;
+}
+/*footer樣式設定*/
+footer {
+	grid-area: footer;
+	background-color: #a5c6d6;
+	padding: 10px;
+	text-align: center;
+	border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+footer a {  
+	color: #050505;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none; 
+}  
+footer a:hover { 
+	color: #5886ca;
+}
+footer p {
+	text-align: center;
+}
+/*TOP按鈕*/
+#myTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #970303;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+}
+#myTop:hover {
+  background-color: #424242;
+}
