@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tw">
+  <head>
+    <meta charset="UTF-8" />
+    <title>夢想製造所</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/login1.css" />
+    <!-- 標題圖示 -->
+    <link rel="icon" href="img/logo.png" />
+    <!-- 引入字體 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&family=Yuji+Syuku&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=RocknRoll+One&family=Yuji+Syuku&display=swap");
+    </style>
+  </head>
+  <body>
+    <nav style="top:0">
+        <a class="logo" href="index.html">
+          <!-- <img src="img/logo.png" alt="logo" width="30" height="30"><p> Dream Factory</p></a> -->
+          <img src="img/logo1.png" alt="logo" width="165" height="48"></a>
+        <ul class="menu">
+          <li style="margin-left: 10%;">
+            <a href="introduction.html">關於夢想</a>
+            <!--第一層-->
+          </li>
+          <li>
+            <a href="product.html">產品介紹</a>
+            <!--第一層-->
+          </li>
+          <li>
+            <a href="faq.html">常見問題</a>
+            <!--第一層-->
+          </li>
+          <li>
+            <a href="thanks.html">致謝清單</a>
+          </li>
+          <!--第一層-->
+        </ul>
+        <div class="wrap_search" >
+          <div class="search">
+             <input type="text" class="searchTerm" placeholder="Search ><">
+             <button type="submit" class="searchButton"style="cursor: pointer;">
+               <i class="fa fa-search" ></i>
+            </button>
+          </div>
+       </div>
+       <img src="img/shopping-bag.png" alt="logo" class="nav_icon"></img>
+       <img src="img/user.png" alt="logo" class="nav_icon" id="user"></a>
+      </nav>
+    <div class="container right-panel-active">
+        <!-- Sign Up -->
+        <div class="container__form container--signup">
+            <form action="#" class="form" id="form1">
+                <h2 class="form__title">Sign Up</h2>
+                <input type="text" placeholder="User" class="input" />
+                <input type="email" placeholder="Email" class="input" />
+                <input type="password" placeholder="Password" class="input" />
+                <button class="btn1">Sign Up</button>
+            </form>
+        </div>
+    
+        <!-- Sign In -->
+        <div class="container__form container--signin">
+            <form action="#" class="form" id="form2">
+                <h2 class="form__title">Sign In</h2>
+                <input type="email" placeholder="Email" class="input" />
+                <input type="password" placeholder="Password" class="input" />
+                <a href="#" class="link">Forgot your password?</a>
+                <button class="btn1">Sign In</button>
+            </form>
+        </div>
+    
+        <!-- Overlay -->
+        <div class="container__overlay">
+            <div class="overlay">
+                <div class="overlay__panel overlay--left">
+                    <button class="btn1" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay__panel overlay--right">
+                    <button class="btn1" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- partial -->
+      <script  src="./js/login1.js"></script>
+    
+    </body>
+    </html>
+    

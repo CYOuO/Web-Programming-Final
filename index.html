@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="tw">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://kit.fontawesome.com/aa09fdd343.js"></script>
+    <title>夢想製造所</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/slide_style.css" />
+    <link rel="stylesheet" href="./css/loading.css" /> 
+    
+    <!-- 標題圖示 -->
+    <link rel="icon" href="img/logo.png" />
+    <!-- 引入字體 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&family=Yuji+Syuku&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=RocknRoll+One&family=Yuji+Syuku&display=swap");
+    </style>
+  </head>
+  <body>
+<div id="loading">
+    <div class="container" id="container11" >
+      <div class="box">
+  
+          <div class="title">
+              <span class="block"></span>
+              <h1>Dream Factory<span></span></h1>
+          </div>
+  
+          <div class="role">
+              <div class="block"></div>
+              <p>KooKaLok.OuChiaYi</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div id="first">
+    <nav>
+      <a class="logo" href="index.html">
+        <!-- <img src="img/logo.png" alt="logo" width="30" height="30"><p> Dream Factory</p></a> -->
+        <img src="img/logo1.png" alt="logo" width="165" height="48"></a>
+      <ul class="menu">
+        <li style="margin-left: 10%;">
+          <a href="introduction.html">關於夢想</a>
+          <!--第一層-->
+        </li>
+        <li>
+          <a href="product.html">產品介紹</a>
+          <!--第一層-->
+        </li>
+        <li>
+          <a href="faq.html">常見問題</a>
+          <!--第一層-->
+        </li>
+        <li>
+          <a href="thanks.html">致謝清單</a>
+        </li>
+        <!--第一層-->
+      </ul>
+      <div class="wrap_search" >
+        <div class="search">
+           <input type="text" class="searchTerm" placeholder="Search ><">
+           <button type="submit" class="searchButton"style="cursor: pointer;padding-left:6px;padding-right:6px;padding-top: 1px;padding-bottom:1px ;;">
+             <i class="fa fa-search" ></i>
+          </button>
+        </div>
+     </div>
+     <img src="img/shopping-bag.png" alt="logo" class="nav_icon"></img>
+     <img src="img/user.png" alt="logo" class="nav_icon" id="user"></a>
+    </nav>
+    <!-- partial:index.partial.html -->
+    <div
+      id="app"
+      class="wrapper"
+      v-cloak
+      v-bind:class="{'is-previous': isPreviousSlide, 'first-load': isFirstLoad}"
+    >
+      <div
+        class="slide-wrapper"
+        v-for="(slide, index) in slides"
+        v-bind:class="{ active: index === currentSlide }"
+        v-bind:style="{ 'z-index': (slides.length - index), 'background-image': 'url(' + slide.bgImg + ')' }"
+      >
+        <div class="slide-inner">
+          <div class="slide-bg-text">
+            <p>{{ slide.headlineFirstLine }}</p>
+            <p>{{ slide.headlineSecondLine }}</p>
+          </div>
+          <div class="slide-rect-filter">
+            <div
+              class="slide-rect"
+              v-bind:style="{'border-image-source': 'url(' + slide.rectImg + ')'}"
+            ></div>
+          </div>
+          <div class="slide-content">
+            <h1 class="slide-content-text" >
+              <p>{{ slide.headlineFirstLine }}</p>
+              <p>{{ slide.headlineSecondLine }}</p>
+            </h1>
+            <a class="slide-content-cta" id="button1" v-bind:href="slide.side" >{{ slide.headlineButton }} </a>
+            
+          </div>
+          <h2 class="slide-side-text">
+            <span>{{ slide.sublineFirstLine }}  </span
+            ><span>{{ slide.sublineSecondLine }}</span>
+          </h2>
+        </div>
+      </div>
+      <div class="controls-container">
+        <button id="we"
+          class="controls-button"
+          v-for="(slide, index) in slides"
+          v-bind:class="{ active: index === currentSlide }"
+          v-on:click="updateSlide(index)"
+        >
+          {{ slide.headlineFirstLine }} {{ slide.headlineSecondLine }}
+        </button>
+      </div>
+      <div class="pagination-container">
+        <span
+          class="pagination-item"
+          v-for="(slide, index) in slides"
+          v-bind:class="{ active: index === currentSlide }"
+          v-on:click="updateSlide(index)"
+        ></span>
+      </div>
+    </div>
+    <div  class="we">
+      <h3 class="header">關於我們</h3>
+      <div class="we_container">
+        <div class="we_item1">
+          <img src="./img/dream1.png" class="we_icon">
+          <h4 class="we_item_header">夢想實現</h4>
+          <h5 class="we_item_subline" style="color: #85a6ae;">DREAM REALIZED</h5>
+          <div class="we_item_point">
+          <li>將夢想化為實際產品</li>
+          <li>實現顧客的願望</li>
+          <li>將想像力無限延伸</li>
+          </div>
+        </div>
+        <div class="we_item2">
+          <img src="./img/green.png" class="we_icon">
+          <h4 class="we_item_header">自然共生</h4>
+          <h5 class="we_item_subline" style="color: #85ae96;">NATURE SYNERGY</h5>
+          <div class="we_item_point">
+          <li>創新又環保</li>
+          <li>重視資源可重複利用</li>
+          <li>貫徹環保意識的生產</li>
+          </div>
+        </div>
+        <div class="we_item3">
+          <img src="./img/sun1.png" class="we_icon">
+          <h4 class="we_item_header">生命之光</h4>
+          <h5 class="we_item_subline" style="color: #aeae85;">SUNSHINE OF LIVE</h5>
+          <div class="we_item_point">
+            <li>為他人點亮希望</li>
+          <li>捐贈收益10%給弱勢兒童</li>
+          <li>給予每個人陽光、力量</li>
+          </div>
+        </div>
+      </div>
+      <button class="btn" id="aa">
+        關於更多
+        <span class="inner" id="sale">
+            <span class="blob"></span>
+            <span class="blob"></span>
+            <span class="blob"></span>
+            <span class="blob"></span>
+        </span>
+    </button>
+    </div>
+    <div class="sale">
+      <h3 class="header">最新優惠</h3>
+      <div class="sale_container">
+        <div class="sale_item">
+        <div class="sale_item1">
+          <h4 class="sale_item1_h">本月限定</h4>
+        </div>
+        <div class="sale_item2">
+          <h4 class="sale_item2_h">夢想起飛（Dream Takeoff）</h4>
+          <p class="sale_item2_p">歡慶開幕！本月帶來限定好康優惠，單件商品享85折優惠，讓您開創屬於自己的夢想；更有精美小禮物於下單時發送，喚醒內心最純粹的幻想，一同邁向嶄新未來！
+        </div>
+        <button class="btn2" id="bb">
+          立刻購買
+          <span class="inner2" >
+              <span class="blob2"></span>
+              <span class="blob2"></span>
+              <span class="blob2"></span>
+              <span class="blob2"></span>
+          </span>
+      </button>
+      </div>
+        <div class="sale_item3" >
+          <img src="./img/sale.png" class="sale_item3_img">
+        </div>
+      </div>
+      <div id="member"></div>
+    </div>
+    
+    <div >
+      <h3 class="header">關於會員</h3>
+      <div class="we_container">
+        <div class="member_item1">
+          <img src="./img/member.png" style="width: 70%;">
+        </div>
+        <div class="we_item">
+
+        </div>
+        <div class="we_item">
+
+        </div>
+      </div>
+      <button class="btn" id="cc">
+        註冊會員
+        <span class="inner" id="sale">
+            <span class="blob"></span>
+            <span class="blob"></span>
+            <span class="blob"></span>
+            <span class="blob"></span>
+        </span>
+    </button>
+    </div>
+
+    <footer>
+      <a href="#"><i class="fa-brands fa-facebook fa-fw fa-2x"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter fa-fw fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UC0PgGZ863G9AKrKLzPRDNCg"
+        ><i class="fa-brands fa-youtube fa-fw fa-2x"></i
+      ></a>
+      <a href="#"
+        ><i class="fa-brands fa-instagram-square fa-fw fa-2x"></i
+      ></a>
+      <p>Copyright © 夢想製造所</p>
+    </footer>
+  </div>
+    <!-- partial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/pic.js"></script>
+
+  </body>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+  <script>
+    $(window).load(function() { // 確認整個頁面讀取完畢再將這三個div隱藏起來
+    $("#container11").delay(3500).fadeOut(1000); //delay --> 延遲幾秒才fadeOut
+    $("#loading").delay(4500).fadeOut(1000);
+})
+
+    </script>
+</html>

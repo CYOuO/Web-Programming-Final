@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-Tw">
+  <head>
+    <meta charset="UTF-8" />
+    <title>夢想製造所</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 標題圖示 -->
+    <link rel="icon" href="img/logo.png" />
+    <!-- 引入字體 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&family=Yuji+Syuku&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=RocknRoll+One&family=Yuji+Syuku&display=swap");
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="logo" href="index.html">
+        <!-- <img src="img/logo.png" alt="logo" width="30" height="30"><p> Dream Factory</p></a> -->
+        <img src="img/logo1.png" alt="logo" width="165" height="48"></a>
+      <ul class="menu">
+        <li style="margin-left: 10%;">
+          <a href="introduction.html">關於夢想</a>
+          <!--第一層-->
+        </li>
+        <li>
+          <a href="product.html">產品介紹</a>
+          <!--第一層-->
+        </li>
+        <li>
+          <a href="faq.html">常見問題</a>
+          <!--第一層-->
+        </li>
+        <li>
+          <a href="thanks.html">致謝清單</a>
+        </li>
+        <!--第一層-->
+      </ul>
+      <div class="wrap_search" >
+        <div class="search" >
+           <input type="text" class="searchTerm" placeholder="Search ><" style="padding-bottom: 5px;padding-top: 5px;padding-right: 5px;padding-left: 5px;border-bottom-width: 2px;border-right-width: 2px;border-top-width: 2px;margin-top: 0px;margin-bottom: 0px;">
+           <button type="submit" class="searchButton"style="cursor: pointer;">
+             <i class="fa fa-search" ></i>
+          </button>
+        </div>
+     </div>
+     <img src="img/shopping-bag.png" alt="logo" class="nav_icon"></img>
+     <img src="img/user.png" alt="logo" class="nav_icon" id="user"></a>
+    </nav>
+
+    <button onclick="topFunction()" id="myTop" title="top">Top</button>
+    <script src="js\topbutton.js"></script>
+    <script src="js\nav.js"></script>
+	<header class="slideshow-container">	  
+		<div class="mySlideshows fade">
+		    <img src="img/work1.jpg" style="width:100%;height:600px;">
+		    <div class="text">辦公室</div>
+		</div>	  
+		<div class="mySlideshows fade">
+		    <img src="img/work2.jpg" style="width:100%;height:600px;">
+		    <div class="text">休息區</div>
+		</div>
+        <div class="mySlideshows fade">
+		    <img src="img/work3.jpg" style="width:100%;height:600px;">
+		    <div class="text">辦公室</div>
+		</div>	  
+		<div class="mySlideshows fade">
+		    <img src="img/work4.jpg" style="width:100%;height:600px;">
+		    <div class="text">佈告欄</div>
+		</div>
+        <!-- <div> -->
+          <!--控制左右移動，當觸及時會啟動plusSlides的function-->
+		    <!-- <a class="prev" onclick="plusSlides(-1)">&#10092;</a>
+		    <a class="next" onclick="plusSlides(1)">&#10093;</a>
+	    </div>   -->
+	    <!--是包覆圓點的元件，每一個span都是一個點，觸及後會啟動currentSlide的function-->
+	    <div style="text-align:center">
+		    <span class="dot" onclick="currentSlide(1)"></span>
+		    <span class="dot" onclick="currentSlide(2)"></span>
+		    <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </header>
+    <section class="row"> 
+        <div class="column side">
+            <img src="img/pic1.jpg" width="100%">
+        </div>
+        <div class="column middle">
+            <h2>夢想製造所有限公司</h2>
+            <p>我們深信，每個孩子都應該擁有一個充滿愛與快樂的童年。這是他們成長的基石，也是他們未來幸福生活的起點。為了實現這一目標，我們致力於創造安全、健康和充滿啟發性的環境，讓孩子們能夠自由探索、學習和成長。</p>
+            <p>我們的每一項服務和產品，都蘊含著對孩子無限的關愛和對他們未來的深切期盼。我們提供高品質的教育資源、創新的遊戲設施以及豐富的課外活動，旨在激發孩子的創造力、培養他們的自信心，並促進他們全方位的發展。</p>
+            <p></p>
+        </div>
+        <div class="column side">
+            <img src="img/pic2.jpg" width="100%">
+        </div>
+    </section> 
+    <!--
+    <section class="row"> 
+        <div class="column middle">
+            <img src="img/pic03.jpg" width="100%">
+        </div>
+        <div class="column side">
+            <h2>魔方小騎兵</h2>
+            <p>Sometimes, like migratory fish, human beings roam the sea, but in the end they desperately want to swim back to their birthplace.</p>
+            <h3>$980</h3>
+            <h5><a class="button" href="#">加入購物車</a></h5>
+        </div>
+        <div class="column side">
+            <img src="img/pic04.JPG" width="100%">
+        </div>
+    </section>
+    <section class="row"> 
+        <div class="column side">
+            <img src="img/pic06.jpg" width="100%">
+        </div>
+        <div class="column middle">
+            <img src="img/pic05.jpg" width="100%">
+        </div>
+        <div class="column side">
+            <h2>五金工具車</h2>
+            <p>DIY五金工具車是極致工藝的表現，你可以自行拆解並組裝，體驗DIY的樂趣。</p>
+            <h3>$680</h3>
+            <h5><a class="button" href="#">加入購物車</a></h5>
+        </div>
+    </section>
+    -->
+    <section>
+        <h2>聯係我們</h2>
+        <p>如果您需要進一步瞭解或想要購買，請致電我的辦公室 1234567890 或使用庫存商品上的銷售查詢鏈接，我的團隊之一將回复您。請參閱以下有關關稅和進口稅的內容。</p>
+        <div class="box">
+        <form action="/action_page.php">
+            <label for="fname">Name</label>
+            <input type="text" id="fname" name="name" placeholder="Your name..">
+            <label for="mail">Email</label>
+            <input type="email" id="mail" name="mail" placeholder="Your Email.."> 
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="taiwan">Taiwan</option>
+                <option value="australia">Australia</option>
+                <option value="japan">Japan</option>
+                <option value="usa">USA</option>
+            </select>
+            <label for="text">Opinion</label>
+            <input type="text" id="text" name="text" placeholder="Your Opinion..">               
+            <input type="submit" value="傳送">
+        </form>
+        </div>
+    </section>
+    <section>
+        <h2>我們的位置</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.7939316145284!2d120.4823029747834!3d23.467896499564247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e9458998f67a9%3A0x8b88d793e39e4d78!2sNational%20Chiayi%20University!5e0!3m2!1sen!2stw!4v1717604045440!5m2!1sen!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <footer>
+      <a href="#"><i class="fa-brands fa-facebook fa-fw fa-2x"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter fa-fw fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UC0PgGZ863G9AKrKLzPRDNCg"
+        ><i class="fa-brands fa-youtube fa-fw fa-2x"></i
+      ></a>
+      <a href="#"
+        ><i class="fa-brands fa-instagram-square fa-fw fa-2x"></i
+      ></a>
+      <p>Copyright © 夢想製造所</p>
+    </footer>
+    <!--<script src="js\mySlides.js"></script>-->
+    <script src="js\mySlidesAuto.js"></script>
+</body>
+</html>
